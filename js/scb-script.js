@@ -23,25 +23,12 @@ setTimeout(function () {
   // CONFRONTO I NUMERI
   //******************** */
   let ricordati = numeriRicordati(userNumber);
-  console.log(ricordati);
-  //********************
-  // DESCRIZIONE
-  //******************** */
+  console.log(
+    "Questi sono i numeri che ha ricordato dopo 30 secondi " + ricordati
+  );
 
   //FINE FUNZIONE TIME OUT
-}, 2000);
-function numeriRicordati(userNumber) {
-  let numeriRicordati = [];
-  for (let i = 0; i < numeri.length; i++) {
-    for (let u = 0; u < userNumber.length; u++) {
-      if (numeri[i] === userNumber[u]) {
-        numeriRicordati.push(numeri[i]);
-      }
-    }
-  }
-  //   console.log(numeriRicordati);
-  return numeriRicordati;
-}
+}, 30000);
 
 // ---------------------------------------------------------------------------
 // FUNZIONI
@@ -67,4 +54,21 @@ function inserisciNumeri() {
   }
   //   console.log(userNumber);
   return userNumber;
+}
+
+//---------------------------------------------------------------------------
+// INIZIALIZZO LA FUNZIONE NUMERI RICORDATI
+//---------------------------------------------------------------------------
+
+function numeriRicordati(userNumber) {
+  let numeriRicordati = [];
+  for (let i = 0; i < numeri.length; i++) {
+    for (let u = 0; u < userNumber.length; u++) {
+      if (numeri[i] === userNumber[u]) {
+        numeriRicordati.push(numeri[i]);
+      }
+    }
+  }
+  //   console.log(numeriRicordati);
+  return numeriRicordati;
 }
