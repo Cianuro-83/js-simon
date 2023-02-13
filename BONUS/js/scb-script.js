@@ -17,22 +17,13 @@ playBtnEl.addEventListener("click", function () {
   //********************
   // RESET PLAYGROUND
   //******************** */
-  validNumber.innerHTML = "";
-  userNumberEl.innerHTML = "";
-  pcNumberEl.innerHTML = "";
+  setTimeout(resetPlayground, 10);
+
   //********************
   // GENERO 5 NUMERI CASUALI
   //******************** */
-  numeri = [];
-  while (numeri.length < 5) {
-    let num = randomNumber(1, 100);
-    if (!numeri.includes(num)) {
-      numeri.push(num);
-      // console.log(numeri);
-    }
-  }
-  console.log(numeri);
-  alert("CERCA DI MEMORIZZARE QUESTI NUMERI " + numeri);
+  setTimeout(startGame, 500);
+
   //********************
   // SETTO TIMER 30 SECONDI
   //******************** */
@@ -50,12 +41,12 @@ playBtnEl.addEventListener("click", function () {
     //********************
     // STAMPO SULLA PAGINA
     //******************** */
-    validNumber.innerHTML = ricordati;
+    validNumber.innerHTML = `${ricordati} <br>  su un totale di 5 mumeri compresi tra 1 e 100`;
     userNumberEl.innerHTML = userNumber;
     pcNumberEl.innerHTML = numeri;
 
     //FINE FUNZIONE TIME OUT
-  }, 2000);
+  }, 30000);
 
   //********************
   // CHIUSURA EVENT PLAY BUTTON
@@ -103,4 +94,30 @@ function numeriRicordati(userNumber) {
   }
   //   console.log(numeriRicordati);
   return numeriRicordati;
+}
+//---------------------------------------------------------------------------
+// INIZIALIZZO LE FUNZIONI: RESET PLAYGROUND
+//---------------------------------------------------------------------------
+
+resetPlayground();
+function resetPlayground() {
+  validNumber.innerHTML = "";
+  userNumberEl.innerHTML = "";
+  pcNumberEl.innerHTML = "";
+}
+//---------------------------------------------------------------------------
+// INIZIALIZZO LE FUNZIONI: CREAZIONE DEI NUMERI CASUALI
+//---------------------------------------------------------------------------
+
+function startGame() {
+  numeri = [];
+  while (numeri.length < 5) {
+    let num = randomNumber(1, 100);
+    if (!numeri.includes(num)) {
+      numeri.push(num);
+      // console.log(numeri);
+    }
+  }
+  console.log(numeri);
+  alert("CERCA DI MEMORIZZARE QUESTI NUMERI " + numeri);
 }
