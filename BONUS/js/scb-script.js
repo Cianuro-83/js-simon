@@ -41,7 +41,7 @@ playBtnEl.addEventListener("click", function () {
     //********************
     // STAMPO SULLA PAGINA
     //******************** */
-    validNumber.innerHTML = `${ricordati} <br>  su un totale di 5 mumeri compresi tra 1 e 100`;
+    validNumber.innerHTML = `${ricordati} <br>  su un totale di 5 numeri compresi tra 1 e 100`;
     userNumberEl.innerHTML = userNumber;
     pcNumberEl.innerHTML = numeri;
 
